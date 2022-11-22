@@ -1,0 +1,39 @@
+\documentclass{ctexart}
+
+\usepackage{geometry}                               % 引入定义版面的宏包
+\geometry {a4paper, scale = 0.8}                    % A4纸，缩放80%
+\usepackage{hyperref}                               % 引入超链接宏包hyperref
+\usepackage{amsmath, amssymb, amsthm, mathtools}    % 引入数学环境的相关宏包
+\DeclareMathOperator{\cov}{Cov}                     % 定义协方差符号
+\numberwithin{equation}{section}                    % 定义公式的三级编号
+\usepackage{multicol}                               % 使用分栏排版宏包
+\usepackage{comment}                                % 方便后续使用注释语句
+\usepackage{tikz}                                   % 绘制矢量图的宏包
+\usepackage{xcolor}                                 % 引入定制颜色的xcolor
+\definecolor{LightBlue}{RGB}{226, 247, 254}         % 自定义颜色LightBlue
+\usepackage{tcolorbox}                              % 引入tcolorbox宏包
+\tcbuselibrary{breakable, most, skins, theorems}    % 调用tcolorbox的库
+\newtcolorbox{question}[2][breakable] {             % 定义解答和问题的样式
+    colback = LightBlue,
+    colframe = cyan, 
+    fonttitle = \bfseries,  
+    title = #2, #1
+}
+\newenvironment{solution}{\noindent{\textbf{{\color{cyan}解答}}}\quad}
+% \excludecomment{solution}                         % 编译指令隐藏所有解答
+
+\begin{document}
+\title{《概率论与数理统计》习题}
+\author{郑锦阳}
+\date{\today}
+\maketitle
+\tableofcontents
+\input{chap/第1章概率论的基本概念.tex}
+\input{chap/第2章随机变量及其分布.tex}
+\input{chap/第3章多维随机变量及其分布.tex}
+\input{chap/第4章随机变量的数字特征.tex}
+\input{chap/第6章样本及抽样分布}
+\input{chap/第7章参数估计.tex}
+\input{chap/第8章假设检验.tex}
+\input{exam/概率论与数理统计期中考试.tex}
+\end{document}

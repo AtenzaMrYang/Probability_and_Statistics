@@ -1,0 +1,177 @@
+\section{样本及抽样分布}
+
+
+\begin{question}{题目1}
+    在总体 $N(52, 6.3^2)$ 中随机抽取一容量为 36 的样本，求样本均值落在 $50.8$ 到 $53.8$ 之间的概率.
+\end{question}
+\begin{solution}
+    根据正态总体的样本均值与样本方差的分布
+    $$
+        \overline{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right) = N(52, 1.05^2).
+    $$
+    从而有
+    $$
+        \begin{aligned}
+            P\left\{50.8 < \overline{X} < 53.8\right\}
+             & = P\left\{\frac{50.8-52}{1.05} < \frac{\overline{X}-52}{1.05} < \frac{53.8-52}{1.05} \right\} \\
+             & = P\left\{-\frac{8}{7} < \frac{\overline{X}-52}{1.05} < \frac{12}{7} \right\}                 \\
+             & = \Phi\left(\frac{12}{7}\right) - \Phi\left(-\frac{8}{7}\right)                               \\
+             & = 0.8302.
+        \end{aligned}
+    $$
+\end{solution}
+
+
+\begin{question}{题目2}
+    在总体 $N(12, 4)$ 中随机抽一容量为 5 的样本 $X_1, X_2, X_3, X_4, X_5$.
+    \begin{enumerate}
+        \item [(1)] 求样本均值与总体均值之差的绝对值大于 1 的概率.
+        \item [(2)] 求概率 $P\{\max\{X_1, X_2, X_3, X_4, X_5\} > 15\}$，$P\{\min\{X_1, X_2, X_3, X_4, X_5\} < 10\}$.
+    \end{enumerate}
+\end{question}
+\begin{solution}
+    (1) 由于样本 $X_1, X_2, X_3, X_4, X_5$ 来自正态总体，所以
+    $$
+        \overline{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right) = N\left(12, 0.8\right).
+    $$
+    样本均值与总体均值之差的绝对值大于 1 的概率
+    $$
+        \begin{aligned}
+            P\{|\overline{X} - \mu| > 1\}
+             & = 1 - P\{\overline{X} - \mu \leqslant 1 \}                                                                                 \\
+             & = 1 - P\{-1 \leqslant \overline{X}-12 \leqslant 1\}                                                                        \\
+             & = 1 - P\left\{ -\frac{1}{\sqrt{0.8}} \leqslant \frac{\overline{X} - 12}{\sqrt{0.8}} \leqslant \frac{1}{\sqrt{0.8}}\right\} \\
+             & = 1 - \left[\Phi\left(\frac{1}{\sqrt{0.8}}\right) - \Phi\left(-\frac{1}{\sqrt{0.8}}\right)\right]                          \\
+             & = 0.2636.
+        \end{aligned}
+    $$
+    (2) 因 $X_i$ 的分布函数为 $\Phi\left(\dfrac{x-12}{2}\right)$，故 $M = \max\{X_1, X_2, X_3, X_4, X_5\}$ 的分布函数为
+    $$
+        F_M(x) = \left[\Phi\left(\frac{x-12}{2}\right)\right]^5,
+    $$
+    因此
+    $$
+        \begin{aligned}
+            P\{\max\{X_1, X_2, X_3, X_4, X_5\} > 15\}
+             & = P\{M > 15\}                                         \\
+             & = 1 - P\{M>15\}                                       \\
+             & = 1 - F_M(15)                                         \\
+             & = 1 - \left[\Phi\left(\frac{15-12}{2}\right)\right]^5 \\
+             & = 0.2923.
+        \end{aligned}
+    $$
+    记$N = \min\{X_1, X_2, X_3, X_4, X_5\}$，则 $N$ 的分布函数为
+    $$
+        F_N(x) = 1 - \left[1-\Phi\left(\frac{x-12}{2}\right)\right]^5,
+    $$
+    因此
+    $$
+        \begin{aligned}
+            P\{\min\{X_1, X_2, X_3, X_4, X_5\} < 10\}
+             & = P\{N<10\}                                               \\
+             & = 1 - \left[1 - \Phi\left(\frac{10-12}{2}\right)\right]^5 \\
+             & = 1 - [1-\Phi(-1)]^5                                      \\
+             & = 1 - \Phi(1)^5                                           \\
+             & = 0.5785.
+        \end{aligned}
+    $$
+\end{solution}
+
+
+
+
+
+
+\begin{question}{题目4}
+    \begin{enumerate}
+        \item [(1)] 设样本 $X_1, X_2, \cdots, X_6$ 来自总体 $N(0,1)$ ，$Y=(X_1+X_2+X_3)^2 + (X_4+X_5+X_6)^2$ ，试确定常数 $C$ 使 $CY$ 服从 $\chi^2$ 分布.
+        \item [(2)] 设样本 $X_1, X_2, \cdots, X_5$ 来自总体 $N(0,1)$ ，$Y = \dfrac{C(X_1+X_2)}{\sqrt{X_3^2 + X_4^2 + X_5^2}}$ ，试确定常数 $C$ 使 $Y$ 服从 $t$ 分布.
+              %\item [(3)] 已知 $X \sim t(n)$ ，求证 $X^2 \sim F(1,n)$.
+    \end{enumerate}
+\end{question}
+\begin{solution}
+    (1) 因为样本来自正态总体 $N(0,1)$，所以
+    $$
+        X_1 + X_2 + X_3 \sim N(0, 3), \quad
+        X_4 + X_5 + X_6 \sim N(0, 3),
+    $$
+    将二者都化为标准正态分布
+    $$
+        \frac{X_1 + X_2 + X_3}{\sqrt{3}} \sim N(0, 1), \quad
+        \frac{X_4 + X_5 + X_6}{\sqrt{3}} \sim N(0, 1),
+    $$
+    由于样本间彼此独立，所以根据 $\chi^2$ 分布的定义，有
+    $$
+        \left(\frac{X_1 + X_2 + X_3}{\sqrt{3}}\right)^2 + \left(\frac{X_4 + X_5 + X_6}{\sqrt{3}}\right)^2 \sim \chi^2(2),
+    $$
+    与 $Y$ 对比系数，得到
+    $$
+        C = \frac{1}{3}.
+    $$
+    (2) 考虑到 $X_1, X_2, \cdots, X_n$ 是总体 $N(0,1)$ 的样本，所以
+    $$
+        X_1 + X_2 \sim N(0,2), \quad \frac{X_1 + X_2}{\sqrt{2}} \sim N(0,1),
+    $$
+    另一方面
+    $$
+        X_3^2 + X_4^2 + X_5^2 \sim \chi^2(3),
+    $$
+    结合 $\dfrac{X_1 + X_2}{\sqrt{2}}$ 与 $X_3^2 + X_4^2 + X_5^2$ 的独立性
+    $$
+        \frac{\dfrac{X_1+X_2}{\sqrt{2}}}{\sqrt{(X_3^2 + X_4^2 + X_5^2)/3}}
+        = \sqrt{\frac{3}{2}} \frac{X_1+X_2}{\sqrt{X_3^2 + X_4^2 + X_5^2}}
+        \sim t(3),
+    $$
+    综上
+    $$
+        C = \sqrt{\frac{3}{2}}.
+    $$
+\end{solution}
+
+
+
+
+
+\begin{question}{题目6}
+    设总体 $X \sim b(1,p)$，$X_1, X_2, \cdots X_n$ 是来自 $X$ 的样本.
+    \begin{enumerate}
+        \item [(1)] 求 $(X_1, X_2, \cdots, X_n)$ 的分布律.
+        \item [(2)] 求 $\displaystyle \sum_{i=1}^{n} X_i$ 的分布律.
+        \item [(3)] 求 $E(\overline{X}), D(\overline{X}), E(S^2)$.
+    \end{enumerate}
+\end{question}
+\begin{solution}
+    (1) 由于样本 $X_i \sim b(1,p)$，所以
+    $$
+        P\{X_i = x_i\} = p^{x_i}(1-p)^{1-x_i} (x_i = 0, 1).
+    $$
+    又因为样本间彼此独立，所以
+    $$
+        \begin{aligned}
+            P\{X_1, X_2, \cdots, X_n\}
+             & = P\{X_1 = x_1\} \cdot P\{X_2 = x_2\} \cdots P\{X_n = x_n\}                   \\
+             & = p^{x_1}(1-p)^{1-x_1} \cdot p^{x_2}(1-p)^{1-x_2} \cdots p^{x_n}(1-p)^{1-x_n} \\
+             & = \prod_{i=1}^{n} p^{x_i}(1-p)^{1-x_i}                                        \\
+             & = p^{\sum_{i=1}^{n} x_i}(1-p)^{\sum_{i=1}^{n} 1-x_i}.                         \\
+        \end{aligned}
+    $$
+    (2) 由于样本 $X_i \sim b(1,p)$ 且彼此相互独立，这显然满足二项分布的定义，所以
+    $$
+        \sum_{i=1}^{n} X_i \sim b(n,p)
+    $$
+    其分布律为
+    $$
+        P\left\{\sum_{i=1}^n X_i = k\right\}
+        = C_n^k p^k (1-p)^{n-k}
+    $$
+    (3) 由于总体 $X \sim b(1,p)$，$E(X) = p$，$D(X) = p(1-p)$，所以
+    $$
+        E(\overline{X}) = \mu = p,
+    $$
+    $$
+        D(\overline{X}) = \frac{\sigma^2}{n} = \frac{p(1-p)}{n},
+    $$
+    $$
+        E(S^2) = \sigma^2 = p(1-p).
+    $$
+\end{solution}

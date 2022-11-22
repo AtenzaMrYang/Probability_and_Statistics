@@ -1,0 +1,341 @@
+\section{假设检验}
+
+
+\subsection{正态总体均值的假设检验}
+
+
+\subsubsection{方差 \texorpdfstring{$\sigma^2$}{σ²}已知——\texorpdfstring{$z$}{z}检验法}
+
+\begin{question}{例题1（双边检验）}
+    设一车床生产的纽扣直径服从正态分布. 根据以往的经验，当车床工作正常时，生产的纽扣的平均直径 $\mu_0 = 26 \,\mathrm{mm}$，方差 $\sigma^2 = 5.2 \,\mathrm{mm^2}$. 某天开工一段时间后，为检验车床生产是否正常，从刚生产的纽扣中随机抽检了 100 颗，测得其观测值$(x_1, x_2, \cdots , x_{100})$ 的样本均值 $\bar{x} = 26.56 \,\mathrm{mm}$. 假定所生产的纽扣的精度保持不变，试分别在显著性水平 $\alpha_1 = 0.05, \alpha_2 = 0.01$ 下检验这天改车床的生产是否正常.
+\end{question}
+\begin{solution}
+    由于方差 $\sigma^2$ 已知，考虑采用 $z$ 检验法.
+    \paragraph{第一步} 作统计假设
+    $$
+        H_0: \mu = \mu_0 = 26, \quad H_1: \mu \neq 26.
+    $$
+    \paragraph{第二步} 选取检验统计量
+    $$
+        z = \frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}} .
+    $$
+    \paragraph{第三步} 选取拒绝域
+    $$
+        C = \left\{ |z| \geqslant z_{\frac{\alpha}{2}}\right\}
+        = \left\{\left|\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}\right| \geqslant z_{\frac{\alpha}{2}}\right\}.
+    $$
+    当 $\alpha_1 = 0.05$ 时
+    $$
+        C_1 = \left\{|z| \geqslant z_{0.025}\right\} = \{|z| \geqslant 1.96\}.
+    $$
+    当 $\alpha_2 = 0.01$ 时
+    $$
+        C_1 = \left\{|z| \geqslant z_{0.005}\right\} = \{|z| \geqslant 2.58\}.
+    $$
+    \paragraph{第四步} 代入实测值
+    $$
+        z = \frac{26.56-26}{\sqrt{5.2}/\sqrt{100}} = 2.4558.
+    $$
+    $$
+        z \in C_1, \quad z \notin C_2.
+    $$
+    故 $\alpha_1 = 0.05$ 的情况下拒绝 $H_0$，认为该车床不正常，$\alpha_2 = 0.01$ 的情况下接受 $H_0$，认为该车床生产正常.
+\end{solution}
+
+
+
+\begin{question}{例题2（左边检验）}
+    有一批枪弹，出厂时的初速度（单位：m/s）服从正态分布 $N(950, 10^2)$. 经过较长时间储存后，现取出 9 发枪弹试射，测得其初速度如下：
+    $$
+        \begin{array}{ccccccccc}
+            914 & 920 & 910 & 934 & 953 & 945 & 912 & 924 & 940
+        \end{array}
+    $$
+    假定 $\sigma_0^2=10^2$ 不变，试在显著性水平 $\alpha=0.05$ 下检验这批枪弹的初速度是否变小.
+\end{question}
+\begin{solution}
+    由于方差 $\sigma^2$ 已知，考虑采用 $z$ 检验法.
+    \paragraph{第一步} 作统计假设
+    $$
+        H_0: \mu=\mu_0=950, \quad H_1: \mu<\mu_0=950.
+    $$
+    \paragraph{第二步} 选取检验统计量
+    $$
+        z = \frac{\bar{x}-\mu_0}{\sigma_0/\sqrt{n}} .
+    $$
+    \paragraph{第三步} 选取拒绝域
+    $$
+        C = \left\{z \leqslant -z_{\alpha}\right\}
+        = \left\{\left|\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}\right| \leqslant -z_{\alpha}\right\}
+        = \{z \leqslant -z_{0.05}\}
+        = \{z \leqslant -1.645\}.
+    $$
+    \paragraph{第四步} 代入实测值
+    $$
+        z = \frac{928-985}{10/\sqrt{9}} = -6.6 \in C.
+    $$
+    故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为枪弹的初速度变小.
+\end{solution}
+
+
+
+\begin{question}{例题3（左边检验）}
+    要求一种元件平均使用寿命不得低于 1000h，生产者从一批这种元件中随机抽取 25 件，测得其寿命的平均值为 950h. 已知该种元件寿命服从标准差为 $\sigma = 100 \,\mathrm{h}$ 的正态分布. 试在显著性水平 $\alpha=0.05$ 下判断这批元件是否合格.
+\end{question}
+\begin{solution}
+    由于方差 $\sigma^2$ 已知，考虑采用 $z$ 检验法.
+    \paragraph{第一步} 作统计假设
+    $$
+        H_0: \mu=\mu_0=1000, \quad H_1: \mu<\mu_0=1000.
+    $$
+    \paragraph{第二步} 选取检验统计量
+    $$
+        z = \frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}} .
+    $$
+    \paragraph{第三步} 选取拒绝域
+    $$
+        C = \left\{z \leqslant -z_{\alpha}\right\}
+        = \left\{\left|\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}\right| \leqslant -z_{\alpha}\right\}
+        = \{z \leqslant -z_{0.05}\}
+        = \{z \leqslant -1.645\}.
+    $$
+    \paragraph{第四步} 代入实测值
+    $$
+        z = \frac{950-1000}{100/\sqrt{25}} = -2.5 \in C.
+    $$
+    故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为这批元件不合格.
+\end{solution}
+
+
+
+\begin{question}{例题4（右边检验）}
+    公司从生产商购买牛奶. 公司怀疑生产商在牛奶中掺水以牟利. 通过测定牛奶的冰点，可以检验出牛奶是否掺水. 天然牛奶的冰点温度近似服从正态分布，均值 $\mu_0=-0.545^\circ\mathrm{C}$，标注差 $\sigma=0.008^\circ\mathrm{C}$. 牛奶掺水可使冰点温度升高而接近于水的冰点温度（$0^\circ\mathrm{C}$）. 测得生产商提交的 5 批牛奶的冰点温度，其均值为 $\bar{x}=-0.535^\circ\mathrm{C}$，问是否可以认为生产商在牛奶中掺了水？取$\alpha=0.05$.
+\end{question}
+\begin{solution}
+    由于方差 $\sigma^2$ 已知，考虑采用 $z$ 检验法.
+    \paragraph{第一步} 作统计假设
+    $$
+        H_0: \mu=\mu_0=-0.545, \quad H_1: \mu>\mu_0=0.545.
+    $$
+    \paragraph{第二步} 选取检验统计量
+    $$
+        z = \frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}} .
+    $$
+    \paragraph{第三步} 选取拒绝域
+    $$
+        C = \left\{z \geqslant z_{\alpha}\right\}
+        = \left\{\left|\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}\right| \geqslant z_{\alpha}\right\}
+        = \{z \geqslant z_{0.05}\}
+        = \{z \geqslant -1.645\}.
+    $$
+    \paragraph{第四步} 代入实测值
+    $$
+        z = \frac{-0.535+0.545}{0.008/\sqrt{5}} = -2.7951 \in C.
+    $$
+    故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为牛奶掺水.
+\end{solution}
+
+
+\subsubsection{方差 \texorpdfstring{$\sigma^2$}{σ²}未知——\texorpdfstring{$t$}{t}检验法}
+
+\begin{question}{例题1（双边检验）}
+    某批矿砂的 5 个样品中的镍含量，经测定为（\%）
+    $$
+        \begin{array}{ccccc}
+            3.25 & 3.27 & 3.24 & 3.26 & 3.24
+        \end{array}
+    $$
+    设测定值总体服从正态分布，但参数均未知. 问在 $\alpha=0.01$ 下能否接受假设：这批矿砂的镍含量的均值为 3.25.
+\end{question}
+\begin{solution}
+    由于方差 $\sigma^2$ 未知，考虑采用 $t$ 检验法.
+    \paragraph{第一步} 作统计假设
+    $$
+        H_0: \mu=\mu_0=3.25, \quad H_1: \mu \neq \mu_0=3.25.
+    $$
+    \paragraph{第二步} 选取检验统计量
+    $$
+        t = \frac{\bar{x}-\mu_0}{S/\sqrt{n}} .
+    $$
+    \paragraph{第三步} 选取拒绝域
+    $$
+        C = \left\{|t| \geqslant t_{\frac{\alpha}{2}}(n-1)\right\}
+        = \left\{\left|\frac{\bar{x}-\mu_0}{S/\sqrt{n}}\right| \geqslant t_{\frac{\alpha}{2}}(n-1)\right\}
+        = \{t \geqslant t_{0.005}(4)\}
+        = \{t \geqslant 4.60413\}.
+    $$
+    \paragraph{第四步} 代入实测值 $\bar{x}=3.252$，$S=0.013$
+    $$
+        t = \frac{-0.535+0.545}{0.013/\sqrt{5}} = 0.344 \notin C.
+    $$
+    故 $\alpha = 0.01$ 的情况下接受 $H_0$，认为这批砂矿的镍含量的均值为 3.25.
+\end{solution}
+
+
+
+\begin{question}{例题2（左边检验）}
+    按规定，100g罐头番茄汁中的平均维生素C含量不得少于 21mg/g. 现从工厂的产品中抽取 17 个罐头，其100g番茄汁中，测得维生素C含量（mg/g）记录如下：
+    $$
+        \begin{array}{ccccccccccccccccc}
+            16 & 25 & 21 & 20 & 23 & 21 & 19 & 15 & 13 & 23 & 17 & 20 & 29 & 18 & 22 & 16 & 22
+        \end{array}
+    $$
+    设维生素含量服从正态分布$N(\mu, \sigma^2), \mu, \sigma^2$ 均未知，问这批罐头是否符合要求（取显著性水平 $\alpha=0.05$）.
+\end{question}
+\begin{solution}
+    由于方差 $\sigma^2$ 未知，考虑采用 $t$ 检验法.
+    \paragraph{第一步} 作统计假设
+    $$
+        H_0: \mu \geqslant \mu_0 = 21, \quad H_1: \mu < \mu_0 = 21.
+    $$
+    \paragraph{第二步} 选取检验统计量
+    $$
+        t = \frac{\bar{x}-\mu_0}{S/\sqrt{n}} .
+    $$
+    \paragraph{第三步} 选取拒绝域
+    $$
+        C = \left\{t<-t_{\alpha}(n-1)\right\}
+        = \left\{\left|\frac{\bar{x}-\mu_0}{S/\sqrt{n}}\right|<-t_{\alpha}(n-1)\right\}
+        = \{t<-t_{0.05}(16)\}
+        = \{t<-1.7459\}.
+    $$
+    \paragraph{第四步} 代入实测值 $\bar{x}=20$，$S=3.984$
+    $$
+        t = \frac{20-21}{3.984/\sqrt{17}} = -1.035 \notin C.
+    $$
+    故 $\alpha = 0.05$ 的情况下接受 $H_0$，认为这批罐头符合要求.
+\end{solution}
+
+
+
+\begin{question}{例题3（右边检验）}
+    下面列出的是某工厂随机选取的 20 只部件的装配时间（min）
+    $$
+        \begin{array}{cccccccccc}
+            9.8  & 10.4 & 10.6 & 9.6  & 9.7  & 9.9 & 10.9 & 11.1 & 9.6  & 10.2 \\
+            10.3 & 9.6  & 9.9  & 11.2 & 10.6 & 9.8 & 10.5 & 10.1 & 10.5 & 9.7
+        \end{array}
+    $$
+    设装配时间的总体服从正态分布$N(\mu, \sigma^2), \mu, \sigma^2$ 均未知. 是否可以认为装配时间的均值显著大于10（取 $\alpha=0.05$）？
+\end{question}
+\begin{solution}
+    由于方差 $\sigma^2$ 未知，考虑采用 $t$ 检验法.
+    \paragraph{第一步} 作统计假设
+    $$
+        H_0: \mu \leqslant \mu_0 = 10, \quad H_1: \mu > \mu_0 = 10.
+    $$
+    \paragraph{第二步} 选取检验统计量
+    $$
+        t = \frac{\bar{x}-\mu_0}{S/\sqrt{n}} .
+    $$
+    \paragraph{第三步} 选取拒绝域
+    $$
+        C = \left\{t \geqslant t_{\alpha}(n-1)\right\}
+        = \left\{\left|\frac{\bar{x}-\mu_0}{S/\sqrt{n}}\right| \geqslant t_{\alpha}(n-1)\right\}
+        = \{t \geqslant t_{0.05}(19)\}
+        = \{t \geqslant 1.7291\}.
+    $$
+    \paragraph{第四步} 代入实测值 $\bar{x}=10.2$，$S=0.5099$
+    $$
+        t = \frac{10.2-10}{0.5099/\sqrt{20}} = 1.754 \in C.
+    $$
+    故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为装配时间的均值显著大于10.
+\end{solution}
+
+
+\subsection{正态总体方差的假设检验}
+
+\subsubsection{均值\texorpdfstring{$\mu$}{μ} 未知——\texorpdfstring{$\chi^2$}{x²}检验法}
+
+\begin{question}{例题1（双边检验）}
+    某厂生产的某种型号的电池，其寿命（以h计）长期以来服从方差 $\sigma^2=5000$ 的正态分布，现有一批这种电池，从它的生产情况来看，寿命的波动性有所改变. 现随机取 26 只电池，测出其寿命的样本方差 $S^2=9200$. 问根据这一数据能否推断这批电池的寿命的波动性较以往的有显著的变化（取$\alpha=0.02$）？
+\end{question}
+\begin{solution}
+    由于均值 $\mu$ 未知，考虑采用 $\chi^2$ 检验法.
+    \paragraph{第一步} 作统计假设
+    $$
+        H_0:\sigma^2 = \sigma_0^2 = 5000, \quad H_1:\sigma^2\neq\sigma_0^2 = 5000.
+    $$
+    \paragraph{第二步} 选取检验统计量
+    $$
+        \chi^2 = \frac{(n-1)S^2}{\sigma_0^2}.
+    $$
+    \paragraph{第三步} 选取拒绝域
+    $$
+        \begin{aligned}
+            C
+             & = \left\{\chi^2 \leqslant \chi_{1-\frac{\alpha}{2}}^2(n-1)\right\} \cup \left\{\chi^2 \geqslant \chi_{\frac{\alpha}{2}}^2(n-1)\right\} \\
+             & = \left\{\chi^2 \leqslant \chi_{0.99}^2(25)\right\} \cup \left\{\chi^2 \geqslant \chi_{0.01}^2(25)\right\}                             \\
+             & = \left\{\chi^2 \leqslant 11.524\right\} \cup \left\{\chi^2 \geqslant 44.314\right\}
+        \end{aligned}
+    $$
+    \paragraph{第四步} 代入实测值
+    $$
+        \chi^2 = \frac{(26-1) \times 9200}{5000} = 46 \in C.
+    $$
+    故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为这批电池的寿命的波动性较以往的有显著的变化.
+\end{solution}
+
+
+
+
+\begin{question}{例题2（左边检验）}
+    一种混杂的小麦品种，株高的标准差为 $\sigma_0 = 14 \,\mathrm{cm}$，经提纯后随机抽取 10 株，它们的株高（以 cm 计）为
+    $$
+        \begin{array}{cccccccccc}
+            90 & 105 & 101 & 95 & 100 & 100 & 101 & 105 & 93 & 97
+        \end{array}
+    $$
+    考察提纯后群体是否比原群体更整齐？取显著性水平$\alpha=0.01$，并设小麦株高服从 $N(\mu, \sigma^2)$.
+\end{question}
+\begin{solution}
+    由于均值 $\mu$ 未知，考虑采用 $\chi^2$ 检验法.
+    \paragraph{第一步} 作统计假设
+    $$
+        H_0: \sigma^2 \geqslant \sigma_0^2 = 14^2, \quad H_1: \sigma^2 < \sigma_0^2 = 14^2.
+    $$
+    \paragraph{第二步} 选取检验统计量
+    $$
+        \chi^2 = \frac{(n-1)S^2}{\sigma_0^2}.
+    $$
+    \paragraph{第三步} 选取拒绝域
+    $$
+        C = \left\{\chi^2 \leqslant \chi_{1-\alpha}^2(n-1)\right\}
+        = \left\{\chi^2 \leqslant \chi_{0.99}^2(9)\right\}
+        = \left\{\chi^2 \leqslant 2.088\right\}
+    $$
+    \paragraph{第四步} 代入实测值 $S^2 = 24.2333$
+    $$
+        \chi^2 = \frac{(10-1) \times 24.23333}{14^2} = 1.1127 \in C.
+    $$
+    故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为提纯后群体比原群体更整齐.
+\end{solution}
+
+
+
+
+\begin{question}{例题3（右边检验）}
+    某种导线，要求其电阻的标准差不得超过 $0.005\Omega$，今在生产的一批线中取样品 9 根，测得 $S=0.007\Omega$，设总体为正态分布，参数均未知. 问在显性水平 $\alpha=0.05$ 下能否认为这批导线的标准差显著地偏大？
+\end{question}
+\begin{solution}
+    由于均值 $\mu$ 未知，考虑采用 $\chi^2$ 检验法.
+    \paragraph{第一步} 作统计假设
+    $$
+        H_0: \sigma^2 \leqslant \sigma_0^2 = 0.005^2, \quad H_1: \sigma^2 > \sigma_0^2 = 14^2.
+    $$
+    \paragraph{第二步} 选取检验统计量
+    $$
+        \chi^2 = \frac{(n-1)S^2}{\sigma_0^2}.
+    $$
+    \paragraph{第三步} 选取拒绝域
+    $$
+        C = \left\{\chi^2 \geqslant \chi_{\alpha}^2(n-1)\right\}
+        = \left\{\chi^2 \geqslant \chi_{0.05}^2(8)\right\}
+        = \left\{\chi^2 \geqslant 15.507\right\}
+    $$
+    \paragraph{第四步} 代入实测值 $S=0.007$
+    $$
+        \chi^2 = \frac{(9-1) \times 0.007^2}{0.005^2} = 15.68 \in C.
+    $$
+    故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为这批导线的标准差显著地偏大.
+\end{solution}

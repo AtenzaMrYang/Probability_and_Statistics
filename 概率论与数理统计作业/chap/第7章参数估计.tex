@@ -1,0 +1,264 @@
+\section{参数估计}
+
+\begin{question}{题目4}
+    \begin{enumerate}
+        \item [(1)] 设总体 $X$ 具有分布律
+              $$
+                  \begin{array}{c|ccc}
+                      X   & 1        & 2                 & 3            \\
+                      \hline
+                      p_k & \theta^2 & 2\theta(1-\theta) & (1-\theta)^2
+                  \end{array}
+              $$
+              其中 $\theta(0 < \theta < 1)$ 为未知参数. 已知取得了样本值 $x_1 = 1, x_2 = 2, x_3 = 1$. 试求 $\theta$ 的矩估计值和最大似然估计值.
+    \end{enumerate}
+\end{question}
+\begin{solution}
+    (1) 对于矩估计值
+    $$
+        \mu_1 = E(X) = \sum_{k=1}^{\infty} x_kp_k = \theta^2+4\theta(1-\theta)+3(1-\theta)^2,
+    $$
+    解得
+    $$
+        \theta = \frac{1}{2}(3-\mu_1),
+    $$
+    所以 $\theta$ 的估计量为
+    $$
+        \hat{\theta} = \frac{1}{2}(3-\overline{x}) = \frac{5}{6}.
+    $$
+    对于最大似然估计值
+    $$
+        L(\theta) = \prod_{i=1}^{3} P\{X_i = x_i\}
+        = \theta^2 \cdot 2\theta(1-\theta) \cdot \theta^2
+        = 2\theta^5(1-\theta),
+    $$
+    两边取对数
+    $$
+        \ln L(\theta) = \ln2 + 5\ln\theta + \ln(1-\theta),
+    $$
+    两边求导，令导函数为零
+    $$
+        \ln L'(\theta) = \frac{5}{\theta} - \frac{1}{1-\theta} = 0,
+    $$
+    所以 $\theta$ 的最大似然估计值为
+    $$
+        \hat{\theta} = \frac{5}{6}.
+    $$
+\end{solution}
+
+
+
+\begin{question}{题目5(2)}
+    设某种电子器件的寿命 （以h计）$T$ 服从双参数的指数分布，其概率密度为
+    $$
+        f(t) = \begin{dcases}
+            \frac{1}{\theta}\mathrm{e}^{-\frac{t-c}{\theta}}, & t \geqslant c, \\
+            0,                                                & \text{其他}.
+        \end{dcases}
+    $$
+    其中 $c,\theta(c,\theta > 0)$ 为未知参数. 自一批这种器件中随机地取 $n$ 件进行寿命试验. 设它们的失效时间依次为 $x_1 \leqslant x_2 \leqslant \cdots \leqslant x_n$.
+    \begin{enumerate}
+        \item [(1)] 求 $\theta$ 与 $c$ 的最大似然估计值.
+        \item [(2)] 求 $\theta$ 与 $c$ 的矩估计值.
+    \end{enumerate}
+\end{question}
+\begin{solution}
+    (2) 对于矩估计值
+    $$
+        \mu_l = \int_{-\infty}^{+\infty} t^l f(t) \,\mathrm{d}t
+        = \int_{c}^{+\infty} \frac{t^l}{\theta}\mathrm{e}^{-\frac{t-c}{\theta}} \,\mathrm{d}t,
+    $$
+    令 $x = \dfrac{t-c}{\theta}$ 有
+    $$
+        \mu_1 = \int_0^{+\infty} \frac{\theta x + c}{\theta} \mathrm{e}^{-x} \,\mathrm{d}(\theta x + c)
+        = \int_0^{+\infty} (\theta x + c) \mathrm{e}^{-x} \,\mathrm{d}x
+        = \theta + c,
+    $$
+    $$
+        \mu_2 = \int_0^{+\infty} \frac{(\theta x + c)^2}{\theta} \mathrm{e}^{-x} \,\mathrm{d}(\theta x + c)
+        = \int_0^{+\infty} \left(\theta^2x^2 + 2\theta cx + c^2\right)\mathrm{e}^{-x} \,\mathrm{d}x
+        = 2\theta^2 + 2\theta c + c^2.
+    $$
+    反解得到
+    $$
+        \begin{cases}
+            \theta = \sqrt{\mu_2 - \mu_1^2}         \\
+            c      = \mu_1 - \sqrt{\mu_2 - \mu_1^2} \\
+        \end{cases}
+    $$
+    带入样本数据，有
+    $$
+        \hat{\theta} = \sqrt{\frac{1}{n}\sum_{i=1}^n(X_i-\overline{X})^2}
+    $$
+    $$
+        \hat{c} = \overline{X} - \sqrt{\frac{1}{n}\sum_{i=1}^n(X_i-\overline{X})^2}
+    $$
+\end{solution}
+
+
+
+\begin{question}{题目8}
+    \begin{enumerate}
+        \item [(1)] 设 $X_1, X_2, \cdots, X_n$ 是来自概率密度为
+              $$
+                  f(x; \theta) = \begin{dcases}
+                      \theta x^{\theta - 1}, & 0<x<1,       \\
+                      0,                     & \text{其他}.
+                  \end{dcases}
+              $$
+              的总体的样本，$\theta$ 未知，求 $U = \mathrm{e}^{-\frac{1}{\theta}}$ 的最大似然估计值.
+        \item [(2)]设 $X_1, X_2, \cdots, X_n$ 是来自正态总体 $N(\mu, 1)$ 的样本. $\mu$ 未知，求 $\theta = P\{X \geqslant 2\}$ 的最大似然估计值.
+              %\item [(3)] 设 $x_1, x_2, \cdots, x_n$ 是来自总体 $b(m, \theta)$ 的样本值，又 $\theta = \dfrac{1}{3}(1+\beta)$，求 $\beta$ 的最大似然估计值.
+    \end{enumerate}
+\end{question}
+\begin{solution}
+    (1) 考虑到样本间的独立性
+    $$
+        P\{X_1, X_2, \cdots, X_n\} = P\{X_1 = x_1\} \cdot P\{X_2 = x_2\} \cdots P\{X_n = x_n\},
+    $$
+    取似然函数为
+    $$
+        L(\theta) = \prod_{i=1}^n \theta x_i^{\theta-1}
+        = \theta^n \prod_{i=1}^n x_i^{\theta-1}
+        = \theta^n \left(\prod_{i=1}^n x_i\right)^{\theta-1},
+    $$
+    两边取对数
+    $$
+        \ln L(\theta)
+        = n\ln\theta + (\theta-1)\ln\left(\prod_{i=1}^n x_i\right)
+        = n\ln\theta + (\theta-1)\sum_{i=1}^{n}\ln{x_i},
+    $$
+    两边求导并令导函数为零
+    $$
+        \ln L'(\theta) = \frac{n}{\theta} + \sum_{i=1}^n \ln{x_i} = 0,
+    $$
+    所以 $\theta$ 的最大似然估计值
+    $$
+        \hat{\theta} = - \dfrac{n}{\sum\limits_{i=1}^n \ln{x_i}},
+    $$
+    考虑到 $U = \mathrm{e}^{-\frac{1}{\theta}}$ 具有单调反函数，所以 $U$ 的最大似然估计值为
+    $$
+        \widehat{U} = \mathrm{e}^{-\frac{1}{\hat{\theta}}}.
+    $$
+\end{solution}
+
+
+
+\begin{question}{题目11}
+    设总体 $X$ 的概率密度为
+    $$
+        f(x;\theta) = \begin{dcases}
+            \frac{1}{\theta}x^{\frac{1-\theta}{\theta}}, & 0<x<1,       \\
+            0,                                           & \text{其他.}
+        \end{dcases}
+        0 < \theta < +\infty.
+    $$
+    $X_1, X_2, \cdots, X_n$ 是来自总体 $X$ 的样本.
+    \begin{enumerate}
+        \item [(1)] 验证 $\theta$ 的最大似然估计量是 $\displaystyle \hat{\theta} = -\frac{1}{n}\sum_{i=1}^n \ln{X_i}$.
+        \item [(2)] 证明 $\hat{\theta}$ 是 $\theta$ 的无偏估计量.
+    \end{enumerate}
+\end{question}
+\begin{solution}
+    (1) 似然函数为
+    $$
+        L(\theta) = \prod_{i=1}^{n} \frac{1}{\theta}x_i^{\frac{1-\theta}{\theta}}
+        = \frac{1}{\theta^n} \prod_{i=1}^{n} x_i^{\frac{1-\theta}{\theta}}
+        = \frac{1}{\theta^n} \left(\prod_{i=1}^{n} x_i\right)^{\frac{1-\theta}{\theta}},
+    $$
+    两边取对数
+    $$
+        \ln L(\theta) = -n\ln{\theta} + \frac{1-\theta}{\theta}\ln\prod_{i=1}^{n}x_i,
+    $$
+    两边求导并令导函数为零
+    $$
+        \ln L'(\theta) = -\frac{n}{\theta} - \frac{1}{\theta^2}\sum_{i=1}^n\ln{x_i} = 0,
+    $$
+    找到 $\theta$ 的最大似然估计量
+    $$
+        \hat{\theta} = -\frac{1}{n}\sum_{i=1}^{n} \ln{x_i}.
+    $$
+    (2) 估计量 $\hat{\theta}$ 的数学期望为
+    $$
+        E(\hat{\theta}) = E\left(-\frac{1}{n}\sum_{i=1}^{n} \ln{x_i}\right)
+        = -\frac{1}{n}E\left(\sum_{i=1}^{n} \ln{x_i}\right)
+        = -\frac{1}{n}\sum_{i=1}^{n}E(\ln{x_i}).
+    $$
+    考虑到
+    $$
+        \begin{aligned}
+            E(\ln{x})
+             & = \int_0^1 \ln{x} \cdot \frac{1}{\theta}x^{\frac{1-\theta}{\theta}} \,\mathrm{d}x
+            = \int_0^1 \ln{x} \,\mathrm{d}\left(x^{\frac{1}{\theta}}\right)                                             \\
+             & = \left.x^{\frac{1}{\theta}}\ln{x}\right|_0^1 - \int_0^1 x^{\frac{1-\theta}{\theta}}\,\mathrm{d}(\ln{x}) \\
+             & = 0 - \left.\theta x^{\frac{1}{\theta}}\right|_0^1 = -\theta.
+        \end{aligned}
+    $$
+    于是
+    $$
+        E(\hat{\theta}) = -\frac{1}{n}E\left(\sum_{i=1}^{n}\ln{x_i}\right)
+        = -\frac{1}{n}\sum_{i=1}^{n}E(\ln{x_i})
+        = -\frac{1}{n}\cdot(-n\theta) = \theta.
+    $$
+    所以 $\hat{\theta}$ 是 $\theta$ 的无偏估计量.
+\end{solution}
+
+
+
+\begin{question}{题目12}
+    设 $X_1,X_2,X_3,X_4$ 是来自均值为 $\theta$ 的指数分布总体的样本，其中 $\theta$ 未知. 设有估计量
+    $$
+        T_1 = \frac{1}{6}(X_1 + X_2) + \frac{1}{3}(X_3 + X_4),
+    $$
+    $$
+        T_2 = \frac{1}{5}(X_1 + 2X_2 + 3X_4 + 4X_4),
+    $$
+    $$
+        T_3 = \frac{1}{4}(X_1 + X_2 + X_3 + X_4).
+    $$
+    \begin{enumerate}
+        \item [(1)] 指出 $T_1, T_2, T_3$ 中哪几个是 $\theta$ 的无偏估计量.
+        \item [(2)] 在上述 $\theta$ 的无偏估计中指出哪一个较为有效.
+    \end{enumerate}
+\end{question}
+\begin{solution}
+    (1) 根据无偏估计的定义，上述估计量的数学期望为
+    $$
+        E(T_1) = \frac{1}{6}E(X_1 + X_2) + \frac{1}{3}E(X_3 + X_4) = \frac{\theta}{3} + \frac{2\theta}{3} = \theta,
+    $$
+    $$
+        E(T_2) = \frac{1}{5}[E(X_1) + 2E(X_2) + 3E(X_3) + 4E(X_4)]
+        = \frac{1}{5}(\theta + 2\theta + 3\theta + 4\theta)
+        = 2\theta,
+    $$
+    $$
+        E(T_3) = \frac{1}{4}[E(X_1) + E(X_2) + E(X_3) + E(X_4)]
+        = \frac{1}{4}(\theta+\theta+\theta+\theta)
+        = \theta.
+    $$
+    所以只有 $T_1$ 和 $T_3$ 是 $\theta$ 的无偏估计量.\\
+    (2)比较两个无偏量估计有效性的依据是方差大小，其中
+    $$
+        \begin{aligned}
+            D(T_1)
+             & = D\left[\frac{1}{6}(X_1+X_2) + \frac{1}{3}(X_3+X_4)\right]           \\
+             & = \frac{1}{36}[D(X_1)+D(X_2)] + \frac{1}{9}[D(X_3) + D(X_4)]          \\
+             & = \frac{1}{36}(\theta^2+\theta^2) + \frac{4}{36}(\theta^2 + \theta^2) \\
+             & = \frac{10}{36}\theta^2,                                              \\
+        \end{aligned}
+    $$
+    $$
+        \begin{aligned}
+            D(T_3)
+             & = D\left[\frac{1}{4}(X_1+X_2+X_3+X_4)\right]              \\
+             & = \frac{1}{16}[D(X_1) + D(X_2) + D(X_3) + D(X_4)]         \\
+             & = \frac{1}{16}[\theta^2 + \theta^2 + \theta^2 + \theta^2] \\
+             & = \frac{9}{36}\theta^2.                                   \\
+        \end{aligned}
+    $$
+    由于
+    $$
+        D(T_1) > D(T_3).
+    $$
+    这说明估计量 $T_3$ 较 $T_1$ 有效.
+\end{solution}

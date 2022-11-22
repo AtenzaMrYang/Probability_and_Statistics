@@ -1,0 +1,336 @@
+\section{概率论的基本概念}
+
+\begin{question}{题目2}
+    设 $A,B,C$ 为三个事件，用 $A,B,C$ 的运算关系表示下列各事件：
+    \begin{itemize}
+        \item[(1)] $A$ 发生，$B$ 与 $C$ 不发生.
+        \item[(2)] $A$ 与 $B$都发生，而 $C$ 不发生.
+        \item[(3)] $A,B,C$ 中至少有一个发生.
+        \item[(4)] $A,B,C$ 都发生.
+        \item[(5)] $A,B,C$ 都不发生.
+        \item[(6)] $A,B,C$ 中不多于一个发生.
+        \item[(7)] $A,B,C$ 中不多于两个发生.
+        \item[(8)] $A,B,C$ 中至少有两个发生.
+    \end{itemize}
+\end{question}
+\begin{solution}
+    \begin{multicols}{4}
+        \begin{itemize}
+            \item[(1)] $A\overline{BC}$
+            \item[(2)] $AB\overline{C}$
+            \item[(3)] $A \cup B \cup C$
+            \item[(4)] $ABC$
+            \item[(5)] $\overline{ABC}$
+            \item[(6)] $\overline{AB}\cup\overline{AC}\cup\overline{BC}$ %$\overline{ABC} + A\overline{BC} + \overline{A}B\overline{C} + \overline{AB}C$ 或者
+            \item[(7)] $\overline{A}\cup\overline{B}\cup\overline{C}$ %$A\cup\overline{A} - A \cap B \cap C$ 或者 
+            \item[(8)] $AB \cup AC \cup BC$ %$\overline{A}BC + A\overline{B}C + AB\overline{C} + ABC$ 或者 
+        \end{itemize}
+    \end{multicols}
+\end{solution}
+
+
+\begin{question}{题目3}
+    \begin{itemize}
+        \item [(1)] 设 $A,B,C$ 是三个事件，且 $P(A) = P(B) = P(C) = \dfrac{1}{4}$，$P(AB) = P(BC) = 0$，$P(AC) = \dfrac{1}{8}$，求 $A,B,C$ 至少有一个发生的概率.
+
+        \item [(2)] 已知 $P(A) = \dfrac{1}{2}$，$P(B) = \dfrac{1}{3}$，$P(C) = \dfrac{1}{5}$，$P(AB) = \dfrac{1}{10}$，$P(AC) = \dfrac{1}{15}$，$P(BC) = \dfrac{1}{20}$，$P(ABC) = \dfrac{1}{30}$，求 $A \cup B$，$\overline{A}\overline{B}$，$A \cup B \cup C$，$\overline{A}\overline{B}\overline{C}$，$\overline{A}\overline{B}C$，$\overline{A} \overline{B}\cup C$ 的概率.
+
+        \item [(3)] 已知 $P(A) = \dfrac{1}{2}$，(i)若 $A,B$ 互不相容，求$P(A\overline{B})$，(ii)若$P(AB) = \dfrac{1}{8}$，求 $P(A\overline{B})$.
+    \end{itemize}
+\end{question}
+\begin{solution}
+    (1) 根据多个事件的加法公式
+    $$
+        \begin{aligned}
+            P(A \cup B \cup C)
+             & = P(A) + P(B) + P(C) - P(AB) - P(AC) - P(BC) + P(ABC)              \\
+             & = \frac{1}{4} + \frac{1}{4} + \frac{1}{4}- 0 - \frac{1}{8} - 0 + 0 \\
+             & = \frac{5}{8}.
+        \end{aligned}
+    $$
+    (2) (i) 根据概率的加法公式
+    $$
+        \begin{aligned}
+            P(A \cup B)
+            = P(A) + P(B) - P(AB)
+            = \frac{1}{2} + \frac{1}{3} - \frac{1}{10}
+            = \frac{11}{15}.
+        \end{aligned}
+    $$
+    (ii) 根据事件运算的德摩根律
+    $$
+        \begin{aligned}
+            P\left(\overline{AB}\right)
+            = P\left(\overline{A \cup B}\right) = 1-P(A \cup B)
+            = 1-\frac{11}{15} = \frac{4}{15}.
+        \end{aligned}
+    $$
+    (iii) 根据多个事件的加法公式
+    $$
+        \begin{aligned}
+            P(A \cup B \cup C)
+             & = P(A) + P(B) + P(C) - P(AB) - P(AC) - P(BC) + P(ABC)                                \\
+             & = \frac{1}{2} + \frac{1}{3} + \frac{1}{5} - \frac{1}{10}-\frac{1}{20} + \frac{1}{30} \\
+             & = \frac{17}{20}.
+        \end{aligned}
+    $$
+    (iv) 根据事件运算的德摩根律
+    $$
+        \begin{aligned}
+            P\left(\overline{ABC}\right)
+            = P\left(\overline{A \cup B \cup C}\right)
+            = 1 - P(A \cup B \cup C)
+            = 1 - \frac{17}{20}
+            = \frac{3}{20}.
+        \end{aligned}
+    $$
+    (v) 设样本空间为 $S$，利用 $\overline{C} = S - C$ 转化
+    $$
+        \begin{aligned}
+            P(\overline{AB}C)
+            = P\left(\overline{AB}(S-\overline{C})\right)
+            = P\left(\overline{AB}\right) - P\left(\overline{ABC}\right)
+            = \frac{4}{15} - \frac{3}{20}
+            = \frac{7}{60}.
+        \end{aligned}
+    $$
+    (vi) 将 $\overline{AB}$ 视作一个事件，根据加法公式
+    $$
+        \begin{aligned}
+            P(\overline{AB}\cup C)
+            = P(\overline{AB}) + P(C) - P(\overline{AB}C)
+            = \frac{4}{15} + \frac{1}{5} - \frac{7}{60}
+            = \frac{7}{20}.
+        \end{aligned}
+    $$
+    (3) 设样本空间为 $S$
+    $$
+        P(A\overline{B}) = P(A(S-B)) = P(A - AB) = P(A) - P(AB).
+    $$
+    (i) 因为 $A,B$ 互不相容，所以 $P(AB) = 0$
+    $$
+        P(A\overline{B}) = P(A) - P(AB) = \frac{1}{2} - 0 = \frac{1}{2}.
+    $$
+    (ii) 若 $P(AB) = \dfrac{1}{8}$
+    $$
+        P(A\overline{B})
+        = P(A)-P(AB)
+        = \frac{1}{2}-\frac{1}{8}
+        = \frac{3}{8}.
+    $$
+\end{solution}
+
+\begin{question}{题目4}
+    设 $A,B$ 是两个事件.
+    \begin{itemize}
+        \item[(1)] 已知 $A\overline{B} = \overline{A}B$，验证 $A=B$.
+        \item[(2)] 验证事件 $A$ 和事件 $B$ 恰有一个发生的概率为 $P(A) + P(B) - 2P(AB)$.
+    \end{itemize}
+\end{question}
+\begin{solution}
+    (1) 设样本空间为 $S$
+    $$
+        \begin{aligned}
+            A\overline{B}     & = \overline{A}B     \\
+            A\left(S-B\right) & = \left(S-A\right)B \\
+            A - AB            & = B - AB            \\
+            A                 & = B.
+        \end{aligned}
+    $$
+    (2) 设样本空间为 $S$
+    $$
+        \begin{aligned}
+            P\left(\overline{A}B + A\overline{B}\right)
+             & = P(\overline{A}B) + P(A\overline{B}) \\
+             & = P[(S-A)B] + P[A(S-B)]               \\
+             & = P(B - AB) + P(A - AB)               \\
+             & = P(A) + P(B) - 2P(AB).
+        \end{aligned}
+    $$
+\end{solution}
+
+\begin{question}{题目6} 在房间里有 10 个人，分别佩戴从 1 号到 10 号的纪念章，任选 3 人记录其纪念章的号码.
+    \begin{itemize}
+        \item[(1)] 求最小号码为 5 的概率.
+        \item[(2)] 求最大号码为 5 的概率.
+    \end{itemize}
+\end{question}
+\begin{solution}
+    (1) 事件$A_1$包含的基本事件数为$C_5^2$，$S$ 中基本事件的总数为 $C_{10}^3$
+    $$
+        P(A_1) = \frac{C_5^2}{C_{10}^3} = \frac{1}{12}.
+    $$
+    (2) 事件$A_2$包含的基本事件数为$C_4^2$，$S$中基本事件的总数为 $C_{10}^3$
+    $$
+        P(A_2) = \frac{C_4^2}{C_{10}^3} = \frac{1}{20}.
+    $$
+\end{solution}
+
+\begin{question}{题目7}
+    某油漆公司发出 17 桶油漆，其中白漆 10 桶、黑漆 4 桶、红漆 3 桶，在搬运中所有标签脱落，交货人随意将这些油漆发给顾客. 问一个订货为 4 桶白漆、3 桶黑漆和 2 桶红漆的顾客，能按所订颜色如数得到订货的概率是多少？
+\end{question}
+\begin{solution}
+    事件 $A$ 包含的基本事件数为 $C_{10}^4 C_4^3 C_3^2$，$S$ 中基本事件的总数为 $C_{17}^9$.
+    $$
+        P(A) = \frac{C_{10}^4 C_4^3 C_3^2}{C_{17}^9} = \frac{252}{2431}.
+    $$
+\end{solution}
+
+\begin{question}{补充习题}
+    某厂家称一批数量为 1000 件的产品的次品率为 5\%. 现从该批产品中有放回地抽取了 30 件，经检验发现有次品 5 件，问该厂家是否谎报了次品率？
+\end{question}
+\begin{solution}
+    若次品率为厂家声称的 5\%，那么当有放回地抽检 30 件时，出现次品的数量应为
+    $$
+        30 \times 5\%  = 1.5.
+    $$
+    而实际抽检出 5 个次品，这说明厂家谎报了次品率.
+    \paragraph{方法二} 假设商家如实地上报次品率，那么有放回地抽取 30 件，出现 5 件次品的概率为
+    $$
+        P = C_{30}^{5}(5\%)^5(1-5\%)^{25} \approx 0.01235.
+    $$
+    这是一个很低概率的事件，说明厂家谎报了次品率.
+\end{solution}
+
+\begin{question}{题目8}
+    在 1500 件产品中有 400 件次品、1100 件正品. 任取 200 件.
+    \begin{itemize}
+        \item [(1)] 求恰有 90 件次品的概率.
+        \item [(2)] 求至少有 2 件次品的概率.
+    \end{itemize}
+\end{question}
+\begin{solution}
+    (1) 设事件 $A_1$ 为恰有 90 件次品
+    $$
+        P(A_1) = \frac{C_{400}^{90}C_{1100}^{110}}{C_{1500}^{200}}.
+    $$
+    (2) 设事件 $A_2$ 为至少有 2 件次品，考虑其对立事件 $\overline{A_2} = \{ \{\text{没有次品}\}, \{\text{只有1件次品}\} \}$
+    $$
+        P(A_2) = 1 - P(\overline{A_2})
+        = 1 - \frac{C_{400}^{0}C_{1100}^{200}}{C_{1500}^{200}} - \frac{C_{400}^{1}C_{1100}^{199}}{C_{1500}^{200}}.
+    $$
+\end{solution}
+
+\begin{question}{题目11}
+    将 3 只球随机地放入 4 个杯子中去，求杯子中球的最大个数分别为 1,2,3 的概率.
+\end{question}
+\begin{solution}
+    设杯中最多有 $i$ 个球为事件 $A_i$
+    $$
+        P(A_1) = \frac{C_4^1C_3^1C_2^1}{C_4^1C_4^1C_4^1} = \frac{6}{16}.
+    $$
+    $$
+        P(A_2) = \frac{C_3^2C_4^1C_3^1}{C_4^1C_4^1C_4^1} = \frac{9}{16}.
+    $$
+    $$
+        P(A_3) = \frac{C_4^1}{C_4^1C_4^1C_4^1} = \frac{1}{16}.
+    $$
+\end{solution}
+
+\begin{question}{题目14}
+    \begin{itemize}
+        \item [(1)] 已知 $P(\overline{A}) = 0.3$，$P(B) = 0.4$，$P(A\overline{B}) = 0.5$，求条件概率 $P(B|A \cup \overline{B})$.
+        \item [(2)] 已知 $P(A) = \dfrac{1}{4}$，$P(B|A) = \dfrac{1}{3}$，$P(A|B) = \dfrac{1}{2}$，求 $P(A \cup B)$.
+    \end{itemize}
+\end{question}
+\begin{solution}
+    (1) 根据题设条件，有
+    $$
+        \begin{cases}
+            P(\overline{A}) = 1 - P(A) = 0.3,      \\
+            P(B) = 1 - P(\overline{B}) = 0.4,      \\
+            P(A\overline{B}) = P(A) - P(AB) = 0.5. \\
+        \end{cases}
+        \implies
+        \begin{cases}
+            P(A) = 0.7,            \\
+            P(\overline{B}) = 0.6, \\
+            P(AB) = 0.2.           \\
+        \end{cases}
+    $$
+    再根据条件概率公式和事件运算的分配律，有
+    $$
+        P(B|A\cup\overline{B})
+        = \frac{P(B(A\cup\overline{B}))}{P(A\cup\overline{B})}
+        = \frac{P(BA \cup B\overline{B})}{P(A\cup\overline{B})}
+        = \frac{P(AB)}{P(A) + P(\overline{B}) - P(A\overline{B})}
+        = \frac{1}{4}.
+    $$
+    (2) 根据题设条件和乘法定理
+    $$
+        \begin{cases}
+            P(AB) = P(B|A)P(A), \\
+            P(AB) = P(A|B)P(B). \\
+        \end{cases}
+        \implies
+        \begin{dcases}
+            P(B) = \frac{1}{6},   \\
+            P(AB) = \frac{1}{12}. \\
+        \end{dcases}
+    $$
+    进一步有
+    $$
+        P(A \cup B) = P(A) + P(B) - P(AB) = \frac{1}{3}.
+    $$
+\end{solution}
+
+\begin{question}{题目16}
+    据以往资料表明，某 3 口之家，患某种传染病的概率有以下规律：
+    $$
+        P\{ \text{孩子得病} \} = 0.6,
+    $$
+    $$
+        P\{ \text{母亲得病}|\text{孩子得病} \} = 0.5,
+    $$
+    $$
+        P\{ \text{父亲得病}|\text{母亲及孩子得病} \} = 0.4,
+    $$
+    求母亲及孩子得病但父亲未得病的概率.
+\end{question}
+\begin{solution}
+    设样本空间为 $S$，事件 $A$ 为孩子得病，事件 $B$ 为母亲得病，事件 $C$ 为父亲得病
+    $$
+        \begin{dcases}
+            P(A) = 0.6,                           \\
+            P(B|A) = \frac{P(AB)}{P(A)} = 0.5,    \\
+            P(C|BA) = \frac{P(ABC)}{P(AB)} = 0.4. \\
+        \end{dcases}
+        \implies
+        \begin{cases}
+            P(AB) = 0.3,    \\
+            P(ABC) =  0.12. \\
+        \end{cases}
+    $$
+    进一步有
+    $$
+        P(AB\overline{C}) = P(AB(S-C)) = P(AB)-P(ABC) = 0.18.
+    $$
+\end{solution}
+
+\begin{question}{题目37}
+    设第一只盒子中装有 3 只蓝球，2 只绿球，2 只白球；第二只盒子中装有 2 只蓝球，3 只绿球，4只白球. 独立地分别在两只盒子中各取一只球.
+    \begin{itemize}
+        \item [(1)] 求至少有一只蓝球的概率.
+        \item [(2)] 求有一只蓝球、一只白球的概率.
+        \item [(3)] 已知至少有一只蓝球，求有一只蓝球一只白球的概率.
+    \end{itemize}
+\end{question}
+\begin{solution}
+    (1) 设事件 $A$ 为至少有一只蓝球，考虑其对立事件 $\overline{A}$
+    $$
+        P(A) = 1-P(\overline{A})
+        = 1 - \frac{C_4^1}{C_7^1} \frac{C_7^1}{C_9^1}
+        = \frac{5}{9}.
+    $$
+    (2) 设事件 $B$ 为取出一只蓝球和一只白球
+    $$
+        P(B) = \frac{C_3^1 C_4^1}{C_7^1C_9^1} + \frac{C_2^1C_2^1}{C_7^1C_9^1}
+        = \frac{16}{63}.
+    $$
+    (3) 根据(1)(2)题的结论和条件概率公式
+    $$
+        P(B|A) = \frac{P(AB)}{P(A)}
+        = \frac{16/63}{5/9}
+        = \frac{16}{35}.
+    $$
+\end{solution}
