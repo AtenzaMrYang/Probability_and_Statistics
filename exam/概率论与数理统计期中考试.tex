@@ -301,7 +301,7 @@
     $$
         \begin{cases}
             P(A) = 0.9,              & P(\overline{A}) = 0.1,              \\
-            P(B|A) = 0.9,            & P(\overline{B}|A) = 0.1,            \\
+            P(B|A) = 0.1,            & P(\overline{B}|A) = 0.9,            \\
             P(B|\overline{A}) = 0.5, & P(\overline{B}|\overline{A}) = 0.5. \\
         \end{cases}
     $$
@@ -363,7 +363,7 @@
             0, & B\text{不发生}.
         \end{cases}
     $$
-    求 $(X,Y)$ 的联合概率密度及边缘分布律.
+    求 $(X,Y)$ 的联合分布律及边缘分布律.
 \end{question}
 \begin{solution}
     根据事件运算的分配律
@@ -379,17 +379,17 @@
         = 1 - [P(A) + P(B) - P(AB)]
         = 0.64.
     $$
-    得到 $(X,Y)$ 的联合概率密度及边缘分布律
+    得到 $(X,Y)$ 的联合分布律及边缘分布律
     $$
         %\renewcommand\arraystretch{1.5}
         %\setlength{\arraycolsep}{12mm}
         \begin{array}{c|cc|c}
             X \setminus Y & 0    & 1    & P\{X=i\} \\
             \hline
-            0             & 0.64 & 0.24 & 0.88     \\
-            1             & 0.06 & 0.06 & 0.12     \\
+            0             & 0.64 & 0.06 & 0.70     \\
+            1             & 0.24 & 0.06 & 0.30     \\
             \hline
-            P\{Y=j\}      & 0.70 & 0.30 & 1        \\
+            P\{Y=j\}      & 0.88 & 0.12 & 1        \\
         \end{array}
     $$
 \end{solution}
@@ -452,7 +452,7 @@
     $$
         \begin{aligned}
             P\{Y=50 , 0.4<X<0.6\}
-             & = P\{Y=30 | 0.4<X<0.6\}P\{0.4<X<0.6\} \\
+             & = P\{Y=50 | 0.4<X<0.6\}P\{0.4<X<0.6\} \\
              & = 0.9 [F(0.6)-F(0.4)]                 \\
              & = 0.9 \times 0.5                      \\
              & = 0.45.                               \\
@@ -460,7 +460,7 @@
     $$
     $$
         \begin{aligned}
-            P\{Y=30, 0.4<X<0.6\}
+            P\{Y=30 , 0.4<X<0.6\}
              & = P\{Y=30 | 0.4<X<0.6\}P\{0.4<X<0.6\} \\
              & = 0.1 [F(0.6)-F(0.4)]                 \\
              & = 0.1 \times 0.5                      \\
@@ -626,7 +626,7 @@
         \end{cases}
     $$
     $$
-        f_Y(y) = \int_{-\infty}^{+\infty} f(x,y) \,\mathrm{d}y
+        f_Y(y) = \int_{-\infty}^{+\infty} f(x,y) \,\mathrm{d}x
         = \begin{dcases}
             \int_{0}^{1} 6x^2y \,\mathrm{d}x, & 0 \leqslant y \leqslant 1, \\
             0,                                & \text{其他}.

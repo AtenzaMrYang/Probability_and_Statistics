@@ -272,7 +272,7 @@
     $$
         F_X(x)
         = \int_{-\infty}^{x} f(x) \,\mathrm{d}x
-        = \int_{0}^{x} \frac{1}{5}\mathrm{e}^{-\frac{x}{5}} \mathrm{d}x
+        = \int_{0}^{x} \frac{1}{5}\mathrm{e}^{-\frac{t}{5}} \mathrm{d}t
         = \begin{cases}
             1-\mathrm{e}^{-\frac{x}{5}}, & x>0,         \\
             0,                           & \text{其他}.
@@ -482,7 +482,7 @@
         \begin{aligned}
             f_Y(y)
              & = F_X'\left(\sqrt{\frac{y-1}{2}}\right)
-            - F_X'\left(\sqrt{\frac{y-1}{2}}\right)                                              \\
+            - F_X'\left(-\sqrt{\frac{y-1}{2}}\right)                                              \\
              & = f_X\left(\sqrt{\frac{y-1}{2}}\right)\left(\sqrt{\frac{y-1}{2}}\right)'
             - f_X\left(-\sqrt{\frac{y-1}{2}}\right)\left(-\sqrt{\frac{y-1}{2}}\right)'           \\
              & = \begin{dcases}

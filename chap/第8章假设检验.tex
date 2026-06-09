@@ -30,7 +30,7 @@
     $$
     当 $\alpha_2 = 0.01$ 时
     $$
-        C_1 = \left\{|z| \geqslant z_{0.005}\right\} = \{|z| \geqslant 2.58\}.
+        C_2 = \left\{|z| \geqslant z_{0.005}\right\} = \{|z| \geqslant 2.58\}.
     $$
     \paragraph{第四步} 代入实测值
     $$
@@ -66,13 +66,13 @@
     \paragraph{第三步} 选取拒绝域
     $$
         C = \left\{z \leqslant -z_{\alpha}\right\}
-        = \left\{\left|\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}\right| \leqslant -z_{\alpha}\right\}
+        = \left\{\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}} \leqslant -z_{\alpha}\right\}
         = \{z \leqslant -z_{0.05}\}
         = \{z \leqslant -1.645\}.
     $$
     \paragraph{第四步} 代入实测值
     $$
-        z = \frac{928-985}{10/\sqrt{9}} = -6.6 \in C.
+        z = \frac{928-950}{10/\sqrt{9}} = -6.6 \in C.
     $$
     故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为枪弹的初速度变小.
 \end{solution}
@@ -95,7 +95,7 @@
     \paragraph{第三步} 选取拒绝域
     $$
         C = \left\{z \leqslant -z_{\alpha}\right\}
-        = \left\{\left|\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}\right| \leqslant -z_{\alpha}\right\}
+        = \left\{\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}} \leqslant -z_{\alpha}\right\}
         = \{z \leqslant -z_{0.05}\}
         = \{z \leqslant -1.645\}.
     $$
@@ -115,7 +115,7 @@
     由于方差 $\sigma^2$ 已知，考虑采用 $z$ 检验法.
     \paragraph{第一步} 作统计假设
     $$
-        H_0: \mu=\mu_0=-0.545, \quad H_1: \mu>\mu_0=0.545.
+        H_0: \mu=\mu_0=-0.545, \quad H_1: \mu>\mu_0=-0.545.
     $$
     \paragraph{第二步} 选取检验统计量
     $$
@@ -124,13 +124,13 @@
     \paragraph{第三步} 选取拒绝域
     $$
         C = \left\{z \geqslant z_{\alpha}\right\}
-        = \left\{\left|\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}\right| \geqslant z_{\alpha}\right\}
+        = \left\{\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}} \geqslant z_{\alpha}\right\}
         = \{z \geqslant z_{0.05}\}
-        = \{z \geqslant -1.645\}.
+        = \{z \geqslant 1.645\}.
     $$
     \paragraph{第四步} 代入实测值
     $$
-        z = \frac{-0.535+0.545}{0.008/\sqrt{5}} = -2.7951 \in C.
+        z = \frac{-0.535-(-0.545)}{0.008/\sqrt{5}} = +2.7951 \in C.
     $$
     故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为牛奶掺水.
 \end{solution}
@@ -161,12 +161,11 @@
     $$
         C = \left\{|t| \geqslant t_{\frac{\alpha}{2}}(n-1)\right\}
         = \left\{\left|\frac{\bar{x}-\mu_0}{S/\sqrt{n}}\right| \geqslant t_{\frac{\alpha}{2}}(n-1)\right\}
-        = \{t \geqslant t_{0.005}(4)\}
-        = \{t \geqslant 4.60413\}.
+        = \{t \leqslant -4.60413\} \cup \{t \geqslant 4.60413\}.
     $$
     \paragraph{第四步} 代入实测值 $\bar{x}=3.252$，$S=0.013$
     $$
-        t = \frac{-0.535+0.545}{0.013/\sqrt{5}} = 0.344 \notin C.
+        t = \frac{3.252-3.25}{0.013/\sqrt{5}} = 0.344 \notin C.
     $$
     故 $\alpha = 0.01$ 的情况下接受 $H_0$，认为这批砂矿的镍含量的均值为 3.25.
 \end{solution}
@@ -195,7 +194,7 @@
     \paragraph{第三步} 选取拒绝域
     $$
         C = \left\{t<-t_{\alpha}(n-1)\right\}
-        = \left\{\left|\frac{\bar{x}-\mu_0}{S/\sqrt{n}}\right|<-t_{\alpha}(n-1)\right\}
+        = \left\{\frac{\bar{x}-\mu_0}{S/\sqrt{n}}<-t_{\alpha}(n-1)\right\}
         = \{t<-t_{0.05}(16)\}
         = \{t<-1.7459\}.
     $$
@@ -231,7 +230,7 @@
     \paragraph{第三步} 选取拒绝域
     $$
         C = \left\{t \geqslant t_{\alpha}(n-1)\right\}
-        = \left\{\left|\frac{\bar{x}-\mu_0}{S/\sqrt{n}}\right| \geqslant t_{\alpha}(n-1)\right\}
+        = \left\{\frac{\bar{x}-\mu_0}{S/\sqrt{n}} \geqslant t_{\alpha}(n-1)\right\}
         = \{t \geqslant t_{0.05}(19)\}
         = \{t \geqslant 1.7291\}.
     $$
@@ -273,7 +272,7 @@
     $$
         \chi^2 = \frac{(26-1) \times 9200}{5000} = 46 \in C.
     $$
-    故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为这批电池的寿命的波动性较以往的有显著的变化.
+    故 $\alpha = 0.02$ 的情况下拒绝 $H_0$，认为这批电池的寿命的波动性较以往的有显著的变化.
 \end{solution}
 
 
@@ -308,7 +307,7 @@
     $$
         \chi^2 = \frac{(10-1) \times 24.23333}{14^2} = 1.1127 \in C.
     $$
-    故 $\alpha = 0.05$ 的情况下拒绝 $H_0$，认为提纯后群体比原群体更整齐.
+    故 $\alpha = 0.01$ 的情况下拒绝 $H_0$，认为提纯后群体比原群体更整齐.
 \end{solution}
 
 
@@ -321,7 +320,7 @@
     由于均值 $\mu$ 未知，考虑采用 $\chi^2$ 检验法.
     \paragraph{第一步} 作统计假设
     $$
-        H_0: \sigma^2 \leqslant \sigma_0^2 = 0.005^2, \quad H_1: \sigma^2 > \sigma_0^2 = 14^2.
+        H_0: \sigma^2 \leqslant \sigma_0^2 = 0.005^2, \quad H_1: \sigma^2 > \sigma_0^2 = 0.005^2.
     $$
     \paragraph{第二步} 选取检验统计量
     $$

@@ -9,7 +9,7 @@
 ## 文件树结构
 
 1. 各章节的子文件放置在 `chap/第X章XXX.tex`
-2. 参考文献的数据库是 `ref/refereence.bib`
+2. 参考文献的数据库是 `ref/reference.bib`
 3. 期中考的源文件在 `exam/概率论与数理统计期中考试.tex`
 
 ```powershell
