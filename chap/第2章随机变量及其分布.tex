@@ -100,7 +100,7 @@
         P\{X = k\} = C_5^k(0.1)^k(1-0.1)^{5-k},(k = 0, 1, 2, 3, 4, 5)
     $$
     $$
-        \begin{array}{c|ccccccc}
+        \begin{array}{c|cccccc}
             X   & 0       & 1       & 2      & 3      & 4       & 5       \\
             \hline
             p_k & 0.59049 & 0.32805 & 0.0729 & 0.0081 & 0.00045 & 0.00001
@@ -179,30 +179,30 @@
     作出分布函数图形
     \begin{center}
         \begin{tikzpicture}[scale = 2]
-            %画出x轴，并标注(1,0)
+            % 画出x轴，并标注(1,0)
             \draw[-latex] (-1.5,0) -- (2,0) node[below]{$x$};
             \node[left] at (0,1) {$1$} ;
-            %画出F(x)轴，并标注(0,0) (0,1) (0,1-p)
+            % 画出F(x)轴，并标注(0,0) (0,1) (0,1-p)
             \draw[-latex] (0, 0) -- (0, 1.5) node[right]{$F(x)$};
             \node[below] at (1,0) {$1$};
             \node[left] at (0,0.5) {$1-p$};
             \node[below] at (0,0) {$O$};
 
-            %画出分段的分布函数F(x)
+            % 画出分段的分布函数F(x)
             \draw[cyan, line width = 1.5pt] (-1.5, 0) -- (0, 0);
             \draw[cyan, line width = 1.5pt] (0, 0.5) -- (1, 0.5);
             \draw[cyan, line width = 1.5pt] (1, 1) -- (2, 1);
-            %标注虚线连续
-            %\draw[dashed, cyan] (0,0) -- (0,0.5);
-            %\draw[dashed, cyan] (1,0.5) -- (1,1);
-            %标注两个实心连续点
-            %\fill[cyan ] (0, 0.5) circle (0.5pt);
-            %\fill[cyan ] (1,   1) circle (0.5pt);
-            %标注两个空心间断点
-            %\draw[cyan ] (0,   0) circle (0.5pt);
-            %\fill[white] (0,   0) circle (0.5pt);
-            %\draw[cyan ] (1, 0.5) circle (0.5pt);
-            %\fill[white] (1, 0.5) circle (0.5pt);
+            % 标注虚线连续
+            \draw[dashed, cyan] (0,0) -- (0,0.5);
+            \draw[dashed, cyan] (1,0.5) -- (1,1);
+            % 标注两个实心连续点
+            \fill[cyan ] (0, 0.5) circle (0.5pt);
+            \fill[cyan ] (1,   1) circle (0.5pt);
+            % 标注两个空心间断点
+            \draw[cyan ] (0,   0) circle (0.5pt);
+            \fill[white] (0,   0) circle (0.5pt);
+            \draw[cyan ] (1, 0.5) circle (0.5pt);
+            \fill[white] (1, 0.5) circle (0.5pt);
         \end{tikzpicture}
     \end{center}
     (2) 分布函数为
@@ -368,7 +368,7 @@
         \renewcommand\arraystretch{2}
         \setlength{\arraycolsep}{6mm}
         \begin{array}{c|cccc}
-            X   & 0             & 1             & 4             & 9              \\
+            Y   & 0             & 1             & 4             & 9              \\
             \hline
             p_k & \dfrac{6}{30} & \dfrac{7}{30} & \dfrac{6}{30} & \dfrac{11}{30}
         \end{array}

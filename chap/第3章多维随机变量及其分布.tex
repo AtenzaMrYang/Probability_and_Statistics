@@ -96,7 +96,7 @@
 \begin{solution}
     (1)设取出黑球 $k$ （$k=0,1,2,3$） 个，取出红球 $r$（$r=0,1,2$） 个，取出白球 $4-k-r$ 个.
     $$
-        P\{X=k, Y=r\} = \frac{C_4^kC_2^rC_2^{4-k-r}}{C_7^4}
+        P\{X=k, Y=r\} = \frac{C_3^kC_2^rC_2^{4-k-r}}{C_7^4}
         (k + r \leqslant 4),
     $$
     进一步，得到 $X$ 和 $Y$ 的联合分布律：
@@ -132,7 +132,7 @@
     设随机变量 $(X,Y)$ 的分布函数为
     $$
         F(x,y) = \begin{cases}
-            1-\mathrm{e}^{-x}-\mathrm{e}^{-y}+\mathrm{e}^{-x-y}, & x>0,y>0,     \\
+            1-\mathrm{e}^{-x}-\mathrm{e}^{-y}+\mathrm{e}^{-x-y}, & x>0,y>0,   \\
             0,                                                   & \text{其他}.
         \end{cases}
     $$
@@ -143,7 +143,7 @@
     $$
         F_X(x) = F(x, +\infty) =
         \begin{cases}
-            1 - \mathrm{e}^{-x}, & x>0,         \\
+            1 - \mathrm{e}^{-x}, & x>0,       \\
             0,                   & \text{其他}.
         \end{cases}
     $$
@@ -151,7 +151,7 @@
     $$
         F_Y(y) = F(+\infty, y) =
         \begin{cases}
-            1 - \mathrm{e}^{-y}, & y>0,         \\
+            1 - \mathrm{e}^{-y}, & y>0,       \\
             0,                   & \text{其他}.
         \end{cases}
     $$
@@ -307,7 +307,7 @@
     (1) 随机变量 $X$ 在区间 $(0,1)$ 上服从均匀分布，其概率密度为
     $$
         f_X(x) = \begin{cases}
-            1, & 0<x<1,       \\
+            1, & 0<x<1,     \\
             0, & \text{其他}.
         \end{cases}
     $$
@@ -371,7 +371,7 @@
     设随机变量 $(X,Y)$ 的概率密度为
     $$
         f(x,y) = \begin{dcases}
-            \frac{1}{2}(x+y)\mathrm{e}^{-(x+y)}, & x>0,y>0,     \\
+            \frac{1}{2}(x+y)\mathrm{e}^{-(x+y)}, & x>0,y>0,   \\
             0,                                   & \text{其他}.
         \end{dcases}
     $$
@@ -411,7 +411,7 @@
     即
     $$
         f_X(x) = \begin{dcases}
-            \frac{\mathrm{e}^{-x}}{2}(x+1), & x>0,         \\
+            \frac{\mathrm{e}^{-x}}{2}(x+1), & x>0,       \\
             0,                              & \text{其他}.
         \end{dcases}
     $$
@@ -419,7 +419,7 @@
     $$
         f_Y(y) = \int_{-\infty}^{+\infty} f(x,y) \,\mathrm{d}x
         = \begin{dcases}
-            \frac{\mathrm{e}^{-y}}{2}(y+1), & y>0,         \\
+            \frac{\mathrm{e}^{-y}}{2}(y+1), & y>0,       \\
             0,                              & \text{其他}.
         \end{dcases}
     $$
@@ -448,7 +448,7 @@
         = \int_0^z\frac{1}{2}(z-y+y)\mathrm{e}^{-(z-y+y)}\mathrm{d}y
         %& = \begin{dcases} \frac{1}{2} \int_0^z z\mathrm{e}^{-z} \mathrm{d}y, & z-y>0, y>0, \\ 0,& \text{其他}. \end{dcases}
         = \begin{dcases}
-            \frac{z^2}{2}\mathrm{e}^{-z}, & z>0,z>y      \\
+            \frac{z^2}{2}\mathrm{e}^{-z}, & z>0        \\
             0,                            & \text{其他}.
         \end{dcases}
     $$
