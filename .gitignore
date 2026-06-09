@@ -1,0 +1,68 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.brf
+*.synctex.gz
+*.synctex.gz(busy)
+*.fdb_latexmk
+*.fls
+*.xdv
+*.run.xml
+*.bcf
+*-blx.bib
+
+# latexindent
+*.bak
+indent.log
+
+# beamer
+*.nav
+*.snm
+*.vrb
+
+# glossaries
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+
+# index
+*.idx
+*.ilg
+*.ind
+*.xdy
+
+# listings / minted
+*.lol
+*.pyg
+_minted-*/
+
+# makeindex
+*.mw
+*.maf
+*.spl
+
+# thmtools
+*.thm
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
