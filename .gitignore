@@ -10,6 +10,7 @@
 *.brf
 *.synctex.gz
 *.synctex.gz(busy)
+*.synctex*
 *.fdb_latexmk
 *.fls
 *.xdv
