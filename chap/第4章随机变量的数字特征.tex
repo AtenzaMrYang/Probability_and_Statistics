@@ -80,9 +80,10 @@
         E(X) = \sum_{k=1}^{\infty} x_kp_k
         = \sum_{k=1}^{\infty} (-1)^{k+1} \frac{3^k}{k} \cdot \frac{2}{3^k}
         = 2\sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k}
-        < 2\sum_{k=1}^{\infty} \left|\frac{1}{k}\right|.
+        < 2\sum_{k=1}^{\infty} \left|\frac{1}{k}\right|
+        \to \infty.
     $$
-    根据判断调和级数敛散性的积分放缩法
+    想要严格证明这个不等式，可以使用积分放缩法：
     \begin{center}
         \begin{tikzpicture}[scale = 1.5]
             %画一系列方块

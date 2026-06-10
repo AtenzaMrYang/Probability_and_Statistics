@@ -46,12 +46,10 @@
     $$
     其分布律为
     $$
-        \renewcommand\arraystretch{2}
-        \setlength{\arraycolsep}{6mm}
         \begin{array}{c|ccc}
-            X   & 3             & 4             & 5             \\
+            X   & 3            & 4            & 5            \\
             \hline
-            p_k & \dfrac{1}{10} & \dfrac{3}{10} & \dfrac{6}{10}
+            p_k & \frac{1}{10} & \frac{3}{10} & \frac{6}{10}
         \end{array}
     $$
     (2) 随机变量 $X$ 的取值范围为 $1, 2, 3, 4, 5, 6$
@@ -75,12 +73,10 @@
     $$
     其分布律为
     $$
-        \renewcommand\arraystretch{2}
-        %\setlength{\arraycolsep}{6mm}
         \begin{array}{c|cccccc}
-            X   & 1              & 2             & 3             & 4             & 5             & 6             \\
+            X   & 1             & 2            & 3            & 4            & 5            & 6            \\
             \hline
-            p_k & \dfrac{11}{36} & \dfrac{9}{36} & \dfrac{7}{36} & \dfrac{5}{36} & \dfrac{3}{36} & \dfrac{1}{36} \\
+            p_k & \frac{11}{36} & \frac{9}{36} & \frac{7}{36} & \frac{5}{36} & \frac{3}{36} & \frac{1}{36} \\
         \end{array}
     $$
 \end{solution}
@@ -261,7 +257,7 @@
     设顾客在某银行的窗口的等待服务的时间 $X$(min) 服从指数分布，其概率密度为
     $$
         f_X(x) = \begin{dcases}
-            \frac{1}{5}\mathrm{e}^{-\frac{x}{5}}, & x>0,         \\
+            \frac{1}{5}\mathrm{e}^{-\frac{x}{5}}, & x>0,       \\
             0,                                    & \text{其他}.
         \end{dcases}
     $$
@@ -274,7 +270,7 @@
         = \int_{-\infty}^{x} f(x) \,\mathrm{d}x
         = \int_{0}^{x} \frac{1}{5}\mathrm{e}^{-\frac{t}{5}} \mathrm{d}t
         = \begin{cases}
-            1-\mathrm{e}^{-\frac{x}{5}}, & x>0,         \\
+            1-\mathrm{e}^{-\frac{x}{5}}, & x>0,       \\
             0,                           & \text{其他}.
         \end{cases}
     $$
@@ -387,7 +383,7 @@
     随机变量 $X$ 在区间 $(0,1)$ 服从均匀分布，概率密度为
     $$
         f(x) = \begin{cases}
-            1, & 0<x<1,       \\
+            1, & 0<x<1,     \\
             0, & \text{其他}.
         \end{cases}
     $$
@@ -429,7 +425,7 @@
             0,                                    & \text{其他}.
         \end{dcases}
         = \begin{dcases}
-            \frac{1}{2}\mathrm{e}^{-\frac{y}{2}}, & y>0,         \\
+            \frac{1}{2}\mathrm{e}^{-\frac{y}{2}}, & y>0,       \\
             0,                                    & \text{其他}.
         \end{dcases}
     $$
@@ -482,9 +478,9 @@
         \begin{aligned}
             f_Y(y)
              & = F_X'\left(\sqrt{\frac{y-1}{2}}\right)
-            - F_X'\left(-\sqrt{\frac{y-1}{2}}\right)                                              \\
+            - F_X'\left(-\sqrt{\frac{y-1}{2}}\right)                                                       \\
              & = f_X\left(\sqrt{\frac{y-1}{2}}\right)\left(\sqrt{\frac{y-1}{2}}\right)'
-            - f_X\left(-\sqrt{\frac{y-1}{2}}\right)\left(-\sqrt{\frac{y-1}{2}}\right)'           \\
+            - f_X\left(-\sqrt{\frac{y-1}{2}}\right)\left(-\sqrt{\frac{y-1}{2}}\right)'                     \\
              & = \begin{dcases}
                      \frac{1}{2\sqrt{\pi(y-1)}}\mathrm{e}^{-\frac{y-1}{4}}, & y \geqslant 1, \\
                      0,                                                     & \text{其他}.
