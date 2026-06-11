@@ -103,7 +103,7 @@
         \item [(1)] 设 $X_1, X_2, \cdots, X_n$ 是来自概率密度为
               $$
                   f(x; \theta) = \begin{dcases}
-                      \theta x^{\theta - 1}, & 0<x<1,       \\
+                      \theta x^{\theta - 1}, & 0<x<1,     \\
                       0,                     & \text{其他}.
                   \end{dcases}
               $$
@@ -149,7 +149,7 @@
     设总体 $X$ 的概率密度为
     $$
         f(x;\theta) = \begin{dcases}
-            \frac{1}{\theta}x^{\frac{1-\theta}{\theta}}, & 0<x<1,       \\
+            \frac{1}{\theta}x^{\frac{1-\theta}{\theta}}, & 0<x<1,     \\
             0,                                           & \text{其他.}
         \end{dcases}
         0 < \theta < +\infty.
@@ -190,8 +190,8 @@
         \begin{aligned}
             E(\ln{x})
              & = \int_0^1 \ln{x} \cdot \frac{1}{\theta}x^{\frac{1-\theta}{\theta}} \,\mathrm{d}x
-            = \int_0^1 \ln{x} \,\mathrm{d}\left(x^{\frac{1}{\theta}}\right)                                             \\
-             & = \left.x^{\frac{1}{\theta}}\ln{x}\right|_0^1 - \int_0^1 x^{\frac{1-\theta}{\theta}}\,\mathrm{d}(\ln{x}) \\
+            = \int_0^1 \ln{x} \,\mathrm{d}\left(x^{\frac{1}{\theta}}\right)                                      \\
+             & = \left.x^{\frac{1}{\theta}}\ln{x}\right|_0^1 - \int_0^1 x^{\frac{1}{\theta}}\,\mathrm{d}(\ln{x}) \\
              & = 0 - \left.\theta x^{\frac{1}{\theta}}\right|_0^1 = -\theta.
         \end{aligned}
     $$
