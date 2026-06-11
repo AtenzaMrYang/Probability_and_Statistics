@@ -70,20 +70,20 @@
 
 \begin{question}{题目4}
     \begin{enumerate}
-        \item [(1)] 设随机变量 $X$ 的分布律为 $\displaystyle P\left\{X=(-1)^{j+1}\frac{3^j}{j}\right\} = \frac{2}{3^j}, j = 1, 2, \cdots $，说明 $X$ 的数学期望不存在.
+        \item [(1)] 设随机变量 $X$ 的分布律为 $\displaystyle P\left\{X=(-1)^{j+1}\frac{3^j}{j}\right\} = \frac{2}{3^j}$（$j = 1, 2, \cdots$）说明 $X$ 的数学期望不存在.
         \item [(2)]  一盒中装有一只黑球，一只白球，作摸球游戏，规则如下：一次从盒中随机摸一只球，若摸到白球，则游戏结束，摸到黑球放回再放入一只黑球，然后再从盒中随机地摸一只球. 试说明要游戏结束的摸球次数 $X$ 的数学期望不存在.
     \end{enumerate}
 \end{question}
 \begin{solution}
-    (1) 根据数学期望的定义
+    (1) 若数学期望存在，则级数$\sum |x_k|p_k$必须收敛，而
     $$
-        E(X) = \sum_{k=1}^{\infty} x_kp_k
-        = \sum_{k=1}^{\infty} (-1)^{k+1} \frac{3^k}{k} \cdot \frac{2}{3^k}
-        = 2\sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k}
-        < 2\sum_{k=1}^{\infty} \left|\frac{1}{k}\right|
-        \to \infty.
+        \sum_{k=1}^{\infty} |x_k|p_k
+        = \sum_{k=1}^{\infty} \frac{3^k}{k} \cdot \frac{2}{3^k}
+        = 2\sum_{k=1}^{\infty} \frac{1}{k}
+        > \int_{1}^{+\infty}\frac{1}{x}\,\mathrm{d}x
+        \to \infty
     $$
-    想要严格证明这个不等式，可以使用积分放缩法：
+    说明级数发散，数学期望不存在。注意，此处用到了积分放缩法来证明不等式
     \begin{center}
         \begin{tikzpicture}[scale = 1.5]
             %画一系列方块
@@ -120,11 +120,7 @@
             \node[below]  at (0,0) {$O$};
         \end{tikzpicture}
     \end{center}
-    $$
-        \sum_{k=1}^{\infty}\frac{1}{k} > \int_{1}^{+\infty}\frac{1}{x}\,\mathrm{d}x \to \infty.
-    $$
-    这说明调和级数 $\sum_{k=1}^{\infty} \frac{1}{k}$ 不绝对收敛，级数 $2\sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k}$ 也不绝对收敛，所以 $X$ 的数学期望不存在.\\
-    (2) 若要游戏在第 $k$ 次摸球时结束，则前 $k-1$ 次均为黑球、第 $k$ 次为白球，摸球次数 $X$ 的分布率为
+    (2) 若要游戏在第 $k$ 次摸球时结束，则前 $k-1$ 次均为黑球，第 $k$ 次为白球，摸球次数 $X$ 的分布律为
     $$
         \begin{array}{c|cccccc}
             \hline
@@ -140,14 +136,17 @@
         =\frac{1}{2}\cdot\frac{2}{3}\cdot\frac{3}{4}\cdot\;\cdots\;\cdot\frac{k-1}{k}
         =\frac{1}{k},
     $$
-    即 $P\{X=k\} = \frac{1}{k}\cdot\frac{1}{k+1} = \frac{1}{k(k+1)}$，随机变量$X$的数学期望为
+    即
     $$
-        E(X) = \sum_{k=1}^{\infty} k\cdot\frac{1}{k(k+1)}
+        P\{X=k\} = \frac{1}{k}\cdot\frac{1}{k+1} = \frac{1}{k(k+1)}
+    $$
+    若要证明随机变量$X$的数学期望存在，则级数$\sum |x_k|p_k$必须收敛，但实际上
+    $$
+        \sum_{k=1}^{\infty} |k|\cdot\frac{1}{k(k+1)}
         = \sum_{k=1}^{\infty} \frac{1}{k+1}
-        = \frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\cdots
         \to \infty
     $$
-    故 $X$ 的数学期望不存在.
+    说明 $X$ 的数学期望不存在.
 \end{solution}
 
 \begin{question}{题目14}
@@ -199,7 +198,7 @@
     \begin{equation}\label{指数分布的方差}
         D(X) = E(X^2) - E^2(X) = 2\theta^2 - \theta^2 = \theta^2.
     \end{equation}
-    (1) 考虑到 $X_1 \sim E\left(\dfrac{1}{2}\right), X_2 \sim E\left(\dfrac{1}{4}\right)$
+    (1) 考虑到 $X_1 \sim E\left(\frac{1}{2}\right), X_2 \sim E\left(\frac{1}{4}\right)$
     $$
         E(X_1+X_2) = E(X_1) + E(X_2) = \frac{1}{2} + \frac{1}{4} = \frac{3}{4}.
     $$

@@ -67,3 +67,6 @@ Desktop.ini
 *~
 .vscode/
 .idea/
+
+# CLAUDE.md (AI context file)
+CLAUDE.md
