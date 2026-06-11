@@ -375,7 +375,7 @@
     $$
     根据事件运算的徳摩根律
     $$
-        P(\overline{AB}) = P(\overline{A \cup B})
+        P(\bar{A}\bar{B}) = P(\overline{A \cup B})
         = 1 - [P(A) + P(B) - P(AB)]
         = 0.64.
     $$
@@ -423,7 +423,7 @@
     $$
     (2) 分布函数 $F(x)$ 定义为
     $$
-        F(x) = \int_{-\infty}^{x} f(x) \,\mathrm{d}x.
+        F(x) = \int_{-\infty}^{x} f(t) \,\mathrm{d}t.
     $$
     \paragraph{情形一} 当 $x \leqslant 0.3$ 时
     $$
@@ -431,17 +431,17 @@
     $$
     \paragraph{情形二} 当 $0.3<x<0.7$ 时
     $$
-        F(x) = \int_{-\infty}^{0.3} 0\,\mathrm{d}x + \int_{0.3}^x 5(1-x)\,\mathrm{d}x
+        F(x) = \int_{-\infty}^{0.3} 0\,\mathrm{d}x + \int_{0.3}^x 5(1-t)\,\mathrm{d}t
         = \left.\left(-\frac{5}{2}x^2 + 5x\right)\right|_{0.3}^{x}
         = -\frac{5}{2}x^2 + 5x - \frac{51}{40}.
     $$
     \paragraph{情形三} 当 $x \geqslant 0.7$ 时
     $$
-        F(x) = \int_{-\infty}^{0.3}0\,\mathrm{d}x + \int_{0.3}^{0.7}5(1-x)\,\mathrm{d}x + \int_{0.7}^{x} 0\,\mathrm{d}x = 1.
+        F(x) = \int_{-\infty}^{0.3}0\,\mathrm{d}t + \int_{0.3}^{0.7}5(1-t)\,\mathrm{d}t + \int_{0.7}^{x} 0\,\mathrm{d}t = 1.
     $$
     综上所述，分布函数 $F(x)$ 为
     $$
-        F(x) = \int_{-\infty}^x f(x) \,\mathrm{d}x
+        F(x) = \int_{-\infty}^x f(t) \,\mathrm{d}t
         = \begin{dcases}
             0,                                    & x \leqslant \frac{3}{10},    \\
             -\frac{5}{2}x^2 + 5x - \frac{51}{40}, & \frac{3}{10}<x<\frac{7}{10}, \\

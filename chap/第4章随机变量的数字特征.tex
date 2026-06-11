@@ -14,7 +14,7 @@
     根据概率密度的定义，其数学期望为
     $$
         E(X) = \int_{-\infty}^{+\infty} xf(x) \ \mathrm{d}x
-        = \int_{0}^{+\infty} \frac{x^2}{\sigma^2} \mathrm{e}^{-\frac{x^2}{2\sigma^2}} \ \mathrm{d}x
+        = \int_{0}^{+\infty} \frac{x^2}{\sigma^2} \mathrm{e}^{-\frac{x^2}{2\sigma^2}} \,\mathrm{d}x
         = \sqrt{\frac{\pi}{2}}\sigma
     $$
     根据方差的性质
@@ -28,7 +28,7 @@
             \mathrm{e}^{-\frac{x^2}{2\sigma^2}} \,\mathrm{d}\left(\frac{x^2}{2\sigma^2}\right) - \frac{\pi}{2}\sigma^2            \\
         \end{aligned}
     $$
-    令 $\frac{x^2}{2\sigma^2} > 0$ 有
+    令 $t=\frac{x^2}{2\sigma^2} > 0$ 有
     $$
         D(X) = 2\sigma^2\int_0^{+\infty}t \mathrm{e}^{-t} \,\mathrm{d}t - \frac{\pi}{2}\sigma^2 = 2\sigma^2 - \frac{\pi}{2}\sigma^2
     $$
@@ -75,11 +75,11 @@
     \end{enumerate}
 \end{question}
 \begin{solution}
-    (1) 若数学期望存在，则级数$\sum |x_k|p_k$必须收敛，而
+    (1) 若数学期望存在，则级数$\sum |x_j|p_j$必须收敛，而
     $$
-        \sum_{k=1}^{\infty} |x_k|p_k
-        = \sum_{k=1}^{\infty} \frac{3^k}{k} \cdot \frac{2}{3^k}
-        = 2\sum_{k=1}^{\infty} \frac{1}{k}
+        \sum_{j=1}^{\infty} |x_j|p_j
+        = \sum_{j=1}^{\infty} \frac{3^j}{j} \cdot \frac{2}{3^j}
+        = 2\sum_{j=1}^{\infty} \frac{1}{j}
         > \int_{1}^{+\infty}\frac{1}{x}\,\mathrm{d}x
         \to \infty
     $$
@@ -256,20 +256,18 @@
 \begin{solution}
     概率密度不为零的区域如图所示
     \begin{center}
-        \begin{center}
-            \begin{tikzpicture}[scale = 1.5]
-                %画填充色快
-                \filldraw[LightBlue] (0, 0) -- (2, 0) -- (2, 2) -- (0,2) -- cycle;
-                \draw[cyan] (0, 0) -- (2, 0) -- (2, 2) -- (0,2) -- cycle;
-                %画坐标系并标注
-                \draw[-latex] (-0.5, 0) -- (2.5, 0) node[below] {$x$};
-                \draw[-latex] (0, 0) -- (0, 2.5) node[left] {$y$};
-                \node[below] at (0, 0) {$O$};
-                %标注区域边界
-                \node[below] at (2, 0) {$2$};
-                \node[left] at (0, 2) {$2$};
-            \end{tikzpicture}
-        \end{center}
+        \begin{tikzpicture}[scale = 1.5]
+            %画填充色快
+            \filldraw[LightBlue] (0, 0) -- (2, 0) -- (2, 2) -- (0,2) -- cycle;
+            \draw[cyan] (0, 0) -- (2, 0) -- (2, 2) -- (0,2) -- cycle;
+            %画坐标系并标注
+            \draw[-latex] (-0.5, 0) -- (2.5, 0) node[below] {$x$};
+            \draw[-latex] (0, 0) -- (0, 2.5) node[left] {$y$};
+            \node[below] at (0, 0) {$O$};
+            %标注区域边界
+            \node[below] at (2, 0) {$2$};
+            \node[left] at (0, 2) {$2$};
+        \end{tikzpicture}
     \end{center}
     根据数学期望的定义，$X$ 的数学期望为
     $$
